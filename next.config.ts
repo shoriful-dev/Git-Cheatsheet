@@ -1,5 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
   output: 'standalone',
   reactCompiler: true,
   cacheComponents: true,
@@ -7,4 +8,5 @@ const nextConfig = {
     // ... other experimental flags if needed
   },
 };
+
 export default nextConfig;
