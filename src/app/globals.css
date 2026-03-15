@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 2, 6, 23;
+  --accent: 59, 130, 246;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+::selection {
+  background: rgba(var(--accent), 0.3);
+  color: white;
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-slate-950/40 backdrop-blur-xl border border-white/[0.05];
+  }
+  
+  .glass-hover {
+    @apply hover:bg-slate-900/60 transition-all duration-300 border border-white/[0.08] hover:border-blue-500/30;
+  }
+
+  .accent-glow {
+    box-shadow: 0 0 50px -12px rgba(var(--accent), 0.2);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(var(--accent), 0.5);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-blue-400 via-indigo-400 to-purple-500;
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded-full hover:bg-slate-700 transition-colors;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
