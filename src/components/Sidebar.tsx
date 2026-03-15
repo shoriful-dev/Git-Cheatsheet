@@ -9,32 +9,34 @@ import { SidebarProps } from '@/types/git';
 export default function Sidebar({ items, isOpen, setIsOpen }: SidebarProps) {
   const [activeId, setActiveId] = useState<string>('');
 
-  // Listen to scroll and determine which section is currently visible
+  // Listen to scroll and determine which section is currently visible using IntersectionObserver
   useEffect(() => {
-    const allIds = items.flatMap(section =>
-      section.items.map(item =>
-        item.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '')
-      )
-    );
-
-    const handleScroll = () => {
-      let currentId = '';
-      for (const id of allIds) {
-        const el = document.getElementById(id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          // Adjust threshold for activation
-          if (rect.top <= 120) {
-            currentId = id;
-          }
-        }
-      }
-      setActiveId(currentId);
+    const observerOptions = {
+      root: null,
+      rootMargin: '-100px 0px -70% 0px',
+      threshold: 0
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // initial check
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveId(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, observerOptions);
+    
+    // Get all items to observe
+    items.forEach(section => {
+      section.items.forEach(item => {
+        const id = item.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
+      });
+    });
+
+    return () => observer.disconnect();
   }, [items]);
 
   const sidebarContent = (

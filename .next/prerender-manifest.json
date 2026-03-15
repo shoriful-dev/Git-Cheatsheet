@@ -2,6 +2,8 @@
   "version": 4,
   "routes": {
     "/_global-error": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "experimentalPPR": true,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -11,6 +13,11 @@
           "type": "header",
           "key": "content-type",
           "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight"
         }
       ],
       "initialRevalidateSeconds": false,
@@ -27,6 +34,8 @@
     },
     "/_not-found": {
       "initialStatus": 404,
+      "renderingMode": "PARTIALLY_STATIC",
+      "experimentalPPR": true,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -36,6 +45,11 @@
           "type": "header",
           "key": "content-type",
           "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight"
         }
       ],
       "initialRevalidateSeconds": false,
@@ -51,6 +65,8 @@
       ]
     },
     "/": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "experimentalPPR": true,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -60,6 +76,11 @@
           "type": "header",
           "key": "content-type",
           "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight"
         }
       ],
       "initialRevalidateSeconds": false,
@@ -78,8 +99,8 @@
   "dynamicRoutes": {},
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "71eb066c3a7baf945e692d5fe6ef054d",
-    "previewModeSigningKey": "26fcc73fb29a062b0484a82a0bfa7acfa68132c27b16d174b7d46bf744da9557",
-    "previewModeEncryptionKey": "a0687280178660a02174ac23466c8e682ece179c9a8013eb3208beaacc3863b4"
+    "previewModeId": "1fe1fbe6fb24d31ed023c0689529c2e6",
+    "previewModeSigningKey": "df3d069b9c897a886bbf2adaa8d7c2c63a820fa18c3e085bb703d7f5ad85e3d7",
+    "previewModeEncryptionKey": "5b38e375e1b32df0336f5a6725e044426bc80a8cceb09deb51b1080814816b16"
   }
 }

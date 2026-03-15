@@ -18,7 +18,14 @@ export default function Navbar({ searchTerm, setSearchTerm, onMenuClick }: Navba
             <Menu size={20} />
           </button>
           
-          <Link href="/" className="flex items-center gap-2.5 group outline-none">
+          <Link 
+            href="/" 
+            onClick={() => {
+              setSearchTerm('');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="flex items-center gap-2.5 group outline-none"
+          >
             <div className="p-1.5 rounded-lg bg-blue-600 shadow-md shadow-blue-600/20 group-hover:shadow-blue-600/40 transition-shadow">
               <GitBranch className="h-4 w-4 text-white" />
             </div>

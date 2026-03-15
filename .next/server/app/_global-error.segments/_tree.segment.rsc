@@ -1,1 +1,1 @@
-0:{"buildId":"wCGbSzrpYWCVIXkFQ-yuW","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false},"staleTime":300}
+0:{"buildId":"Bkih21Kk5q7JngT327jTo","tree":{"name":"","paramType":null,"paramKey":null,"hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":null,"hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false},"staleTime":300}

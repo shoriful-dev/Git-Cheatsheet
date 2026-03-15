@@ -52,11 +52,18 @@
     "prefetchSegmentHeader": "next-router-segment-prefetch",
     "prefetchSegmentSuffix": ".segment.rsc",
     "prefetchSegmentDirSuffix": ".segments",
-    "clientParamParsing": false,
-    "dynamicRSCPrerender": false
+    "clientParamParsing": true,
+    "dynamicRSCPrerender": true
   },
   "rewriteHeaders": {
     "pathHeader": "x-nextjs-rewritten-path",
     "queryHeader": "x-nextjs-rewritten-query"
+  },
+  "ppr": {
+    "chain": {
+      "headers": {
+        "next-resume": "1"
+      }
+    }
   }
 }

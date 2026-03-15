@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useDeferredValue } from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Sidebar from '@/components/Sidebar';
@@ -13,12 +13,22 @@ import { GitCategory, GitItem, GitCommand } from '@/types/git';
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const deferredSearchTerm = useDeferredValue(searchTerm);
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
+  const [currentYear, setCurrentYear] = useState<number>(2026);
+
+  React.useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+    // Auto scroll to top on refresh if no hash is present
+    if (window.location.hash === '') {
+      window.scrollTo(0, 0);
+    }
+  }, []);
 
   const filteredItems = useMemo<GitCategory[]>(() => {
-    if (!searchTerm) return gitItems;
+    if (!deferredSearchTerm) return gitItems;
     
-    const searchLower = searchTerm.toLowerCase();
+    const searchLower = deferredSearchTerm.toLowerCase();
     
     return gitItems.map(category => {
       const matchedItems = category.items.filter((item: GitItem) =>
@@ -191,7 +201,7 @@ export default function Home() {
               <span className="font-semibold text-sm text-slate-300">GitDocs Hub</span>
             </div>
             <p className="text-slate-600 text-xs">
-              © {new Date().getFullYear()} Shoriful Islam · Built for the developer community
+              © {currentYear} Shoriful Islam · Built for the developer community
             </p>
             <div className="flex gap-6">
               <Link href="https://github.com/shoriful-dev" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-300 transition-colors text-xs font-medium outline-none">GitHub</Link>

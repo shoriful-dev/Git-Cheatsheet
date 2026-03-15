@@ -102,7 +102,8 @@ self.__SERVER_FILES_MANIFEST={
       }
     },
     "outputFileTracingRoot": "/home/user/Code/Front-End_Project/Git-Cheatsheet",
-    "cacheComponents": false,
+    "enablePrerenderSourceMaps": true,
+    "cacheComponents": true,
     "cacheLife": {
       "default": {
         "stale": 300,
@@ -182,7 +183,7 @@ self.__SERVER_FILES_MANIFEST={
       "typedEnv": false,
       "parallelServerCompiles": false,
       "parallelServerBuildTraces": false,
-      "ppr": false,
+      "ppr": true,
       "authInterrupts": false,
       "webpackMemoryOptimizations": false,
       "optimizeServerReact": true,
@@ -199,7 +200,7 @@ self.__SERVER_FILES_MANIFEST={
       "staticGenerationMinPagesPerWorker": 25,
       "transitionIndicator": false,
       "inlineCss": false,
-      "useCache": false,
+      "useCache": true,
       "globalNotFound": false,
       "browserDebugInfoInTerminal": false,
       "lockDistDir": true,
@@ -293,6 +294,7 @@ self.__SERVER_FILES_MANIFEST={
     "htmlLimitedBots": "[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight",
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.mjs",
+    "reactCompiler": true,
     "turbopack": {
       "root": "/home/user/Code/Front-End_Project/Git-Cheatsheet"
     },
