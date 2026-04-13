@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { X, GitBranch } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { categoryIcons } from '@/data/icons';
@@ -76,7 +75,7 @@ export default function Sidebar({ items, isOpen, setIsOpen }: SidebarProps) {
                   const isActive = activeId === itemId;
 
                   return (
-                    <Link
+                    <a
                       key={item.name}
                       href={`#${itemId}`}
                       onClick={() => setIsOpen(false)}
@@ -100,7 +99,7 @@ export default function Sidebar({ items, isOpen, setIsOpen }: SidebarProps) {
                           : 'bg-slate-700 group-hover:bg-slate-500'
                       }`} />
                       <span className="truncate">{item.name}</span>
-                    </Link>
+                    </a>
                   );
                 })}
               </div>

@@ -116,20 +116,20 @@ export default function Home() {
 
                   {/* CTA Buttons */}
                   <div className="flex flex-wrap gap-3">
-                    <Link
+                    <a
                       href="#what-is-git"
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 text-white text-sm font-semibold hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/20 active:scale-95 outline-none"
                     >
                       <Rocket size={16} />
                       Start Learning
-                    </Link>
-                    <Link
+                    </a>
+                    <a
                       href="#working-with-branches"
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-800 text-slate-200 text-sm font-semibold hover:bg-slate-700 border border-slate-700 transition-all active:scale-95 outline-none"
                     >
                       <BookOpen size={16} />
                       Jump to Branching
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </motion.div>
