@@ -31,10 +31,10 @@ export default function TableOfContents({ items }: TableOfContentsProps) {
   return (
     <div className="hidden xl:block w-64 flex-shrink-0">
       <div className="sticky top-24 pl-4">
-        <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">
+        <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-600 mb-4">
           On This Page
         </h4>
-        <nav className="space-y-3 border-l border-slate-800">
+        <nav className="space-y-3 border-l border-slate-200">
           {items.map((category) => (
             <div key={`${category.category}-toc`} className="space-y-3">
               {category.items.map((item) => {
@@ -46,8 +46,8 @@ export default function TableOfContents({ items }: TableOfContentsProps) {
                     href={`#${id}`}
                     className={`block pl-4 text-[13px] font-medium transition-all relative outline-none ${
                       isActive 
-                        ? 'text-blue-400 border-l border-blue-500 -ml-px' 
-                        : 'text-slate-500 hover:text-slate-300 border-l border-transparent -ml-px'
+                        ? 'text-git-500 border-l border-git-500 -ml-px' 
+                        : 'text-slate-600 hover:text-slate-700 border-l border-transparent -ml-px'
                     }`}
                   >
                     {item.name}

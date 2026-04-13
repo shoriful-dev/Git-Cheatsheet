@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-rgb: 2, 6, 23;
-  --accent: 59, 130, 246;
+  --foreground-rgb: 51, 51, 51; /* #333333 */
+  --background-rgb: 244, 244, 244; /* #f4f4f4 */
+  --accent: 240, 80, 50; /* Git Red/Orange #F05032 */
 }
 
 html {
@@ -14,33 +14,33 @@ html {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
+  background: white; /* Git primarily uses white background on docs */
 }
 
 ::selection {
-  background: rgba(var(--accent), 0.3);
-  color: white;
+  background: rgba(var(--accent), 0.2);
+  color: rgb(var(--foreground-rgb));
 }
 
 @layer utilities {
   .glass {
-    @apply bg-slate-950/40 backdrop-blur-xl border border-white/[0.05];
+    @apply bg-white/80 backdrop-blur-xl border border-slate-200;
   }
   
   .glass-hover {
-    @apply hover:bg-slate-900/60 transition-all duration-300 border border-white/[0.08] hover:border-blue-500/30;
+    @apply hover:bg-slate-50 transition-all duration-300 border border-slate-200 hover:border-git-300;
   }
 
   .accent-glow {
-    box-shadow: 0 0 50px -12px rgba(var(--accent), 0.2);
+    box-shadow: 0 0 50px -12px rgba(var(--accent), 0.15);
   }
 
   .text-glow {
-    text-shadow: 0 0 20px rgba(var(--accent), 0.5);
+    text-shadow: 0 0 20px rgba(var(--accent), 0.3);
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-br from-blue-400 via-indigo-400 to-purple-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-git-500 via-git-600 to-orange-500;
   }
 }
 
@@ -53,7 +53,7 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  @apply bg-slate-800 rounded-full hover:bg-slate-700 transition-colors;
+  @apply bg-slate-300 rounded-full hover:bg-slate-400 transition-colors;
 }
 
 @keyframes float {
