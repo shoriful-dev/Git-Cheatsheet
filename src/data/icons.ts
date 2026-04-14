@@ -1,16 +1,26 @@
 import {
-  Rocket, FolderOpen, Code, GitBranch, Globe, Undo2, Archive, Zap, Search, Trash2, LucideIcon
+  Flag,
+  PlusCircle,
+  Edit3,
+  GitBranch,
+  Users,
+  History,
+  Layers,
+  Cpu,
+  Terminal,
+  Wrench,
+  LucideIcon
 } from 'lucide-react';
 
 export const categoryIcons: Record<string, LucideIcon> = {
-  "Getting Started": Rocket,
-  "Creating Projects": FolderOpen,
-  "Day-to-Day Workflow": Code,
+  "Getting Started": Flag,
+  "Creating Projects": PlusCircle,
+  "Day-to-Day Workflow": Edit3,
   "Branching & Merging": GitBranch,
-  "Remote & Collaboration": Globe,
-  "Undoing Mistakes": Undo2,
-  "Stashing": Archive,
-  "Advanced Techniques": Zap,
-  "Inspection & Debugging": Search,
-  "Cleanup & Maintenance": Trash2,
+  "Remote & Collaboration": Users,
+  "Undoing Mistakes": History,
+  "Stashing": Layers,
+  "Advanced Techniques": Cpu,
+  "Inspection & Debugging": Terminal,
+  "Cleanup & Maintenance": Wrench,
 };

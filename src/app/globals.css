@@ -3,32 +3,61 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 51, 51, 51; /* #333333 */
-  --background-rgb: 244, 244, 244; /* #f4f4f4 */
-  --accent: 240, 80, 50; /* Git Red/Orange #F05032 */
+  --foreground-rgb: 51, 51, 51;
+  /* #333333 - Git SCM primary text */
+  --background-rgb: 248, 248, 248;
+  /* #f8f8f8 - Git SCM page background */
+  --accent: 240, 80, 50;
+  /* Git Orange-Red #F05032 */
+  --header-bg: 46, 45, 41;
+  /* #2e2d29 - Git SCM header dark */
+}
+
+.dark {
+  --foreground-rgb: 230, 230, 230;
+  --background-rgb: 20, 20, 20;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+}
+
+body {
+  font-family: var(--font-inter);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-outfit);
+}
+
 body {
   color: rgb(var(--foreground-rgb));
-  background: white; /* Git primarily uses white background on docs */
+  background: rgb(var(--background-rgb));
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
-  background: rgba(var(--accent), 0.2);
+  background: rgba(var(--accent), 0.25);
   color: rgb(var(--foreground-rgb));
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/80 backdrop-blur-xl border border-slate-200;
+    @apply bg-white/90 dark:bg-darkbg-100/90 backdrop-blur-xl border border-gitgray-200 dark:border-gitgray-800;
   }
-  
+
   .glass-hover {
-    @apply hover:bg-slate-50 transition-all duration-300 border border-slate-200 hover:border-git-300;
+    @apply hover:bg-gitgray-50 dark:hover:bg-darkbg-50 transition-all duration-300 border border-gitgray-200 dark:border-gitgray-800 hover:border-git-300;
   }
 
   .accent-glow {
@@ -40,7 +69,7 @@ body {
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-br from-git-500 via-git-600 to-orange-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-git-500 via-git-600 to-git-700;
   }
 }
 
@@ -53,13 +82,21 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  @apply bg-slate-300 rounded-full hover:bg-slate-400 transition-colors;
+  @apply bg-gitgray-300 dark:bg-gitgray-700 rounded-full hover:bg-gitgray-400 dark:hover:bg-gitgray-600 transition-colors;
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .animate-float {
